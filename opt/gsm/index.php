@@ -17,7 +17,7 @@ header('Location: bts.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <title> OpenStreetMaps - Leaflet </title>
+ <title> GSM BTS </title>
  <meta http-equiv="Expires" CONTENT="Sun, 12 May 2003 00:36:05 GMT">
  <meta http-equiv="Pragma" CONTENT="no-cache">
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -44,21 +44,28 @@ header('Location: bts.php');
 
 <?php
 $_23101="Orange";
+$_23101fill="Yellow";
+
 $_23102="Magenta";
+$_23102fill="Purple";
+
 $_23103="Green";
+$_23103fill="lightGreen";
+
 $_23106="Blue";
+$_23106fill="lightBlue";
 
 $file_23101 = '23101.clf.txt';
-$number_23101 = (count(file($file_23101)) + 2) / 3 - 2 ;
+$number_23101 = (count(file($file_23101)) - 3);
 
 $file_23102 = '23102.clf.txt';
-$number_23102 = (count(file($file_23102)) + 2) / 3 - 2 ;
+$number_23102 = (count(file($file_23102)) - 3);
 
 $file_23103 = '23103.clf.txt';
-$number_23103 = (count(file($file_23103)) + 2) / 3 - 2 ;
+$number_23103 = (count(file($file_23103)) - 3);
 
 $file_23106 = '23106.clf.txt';
-$number_23106 = (count(file($file_23106)) + 2) / 3 - 2 ;
+$number_23106 = (count(file($file_23106)) - 3);
 ?>
 <table align="center" border="0">
  <tr>
@@ -96,69 +103,103 @@ $number_23106 = (count(file($file_23106)) + 2) / 3 - 2 ;
 document.getElementById("map").width = window.innerWidth-"40";
 document.getElementById("maph").height = window.innerHeight-"260"; //  Vacsie cislo, mensia mapa
 </script>
+<?php
+$filename='gps.gpx';
+
+$line1 = file($filename)[0];
+list($a, $lat) = explode('=', $line1);
+
+$line2 = file($filename)[1];
+list($a, $lon) = explode('=', $line2);
+?>
 
     <script>
-        map = L.map('map').setView([48.7000, 20.1000], 8);
+        map = L.map('map').setView([<?php echo $lat.",".$lon;?>], 15);
         L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //        'http://maps.ztk-comp.sk/{z}/{x}/{y}.png', {
         maxZoom: 18,
         }).addTo(map);
 
+
+var popup = L.popup();
+function onMapClick(e) {
+        popup
+        .setLatLng(e.latlng)
+        .setContent(e.latlng.toString())
+        .openOn(map);
+}
+map.on('click', onMapClick);
+
+
 <?php 
 if ( $IID1 == "23101" ) {
-include('23101.clf.txt'); 
-?>
-        latLong.forEach(function(coord) {
-                var circle = L.circle(coord, {
-                color: '<?php echo $_23101;?>',
-                fillColor: '<?php echo $_23101;?>',
-                fillOpacity: 25,
-                radius: 25
-                }).addTo(map);
-        });
+include('23101.clf.txt'); ?>
+for (var i = 0; i < latLong.length; i++) {
+	marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+	color: '<?php echo $_23101;?>',
+	fillColor: '<?php echo $_23101fill;?>',
+	fillOpacity: 5,
+	radius: 2
+	}).addTo(map).bindPopup(latLong[i][0]);
+}
+
 <?php
 }
 if ( $IID2 == "23102" ) {
 include('23102.clf.txt'); ?>
-        latLong.forEach(function(coord) {
-                var circle = L.circle(coord, {
-                color: '<?php echo $_23102;?>',
-               fillColor: '<?php echo $_23102;?>',
-                fillOpacity: 25,
-                radius: 25
-                }).addTo(map);
-        });
+for (var i = 0; i < latLong.length; i++) {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        color: '<?php echo $_23102;?>',
+        fillColor: '<?php echo $_23102fill;?>',
+        fillOpacity: 5,
+        radius: 2
+        }).addTo(map).bindPopup(latLong[i][0]);
+}
 
 <?php 
 }
 if ( $IID3 == "23103" ) {
 include('23103.clf.txt'); ?>
-        latLong.forEach(function(coord) {
-                var circle = L.circle(coord, {
-                color: '<?php echo $_23103;?>',
-                fillColor: '<?php echo $_23103;?>',
-                fillOpacity: 25,
-                radius: 25
-                }).addTo(map);
-        });
+for (var i = 0; i < latLong.length; i++) {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        color: '<?php echo $_23103;?>',
+        fillColor: '<?php echo $_23103fill;?>',
+        fillOpacity: 5,
+        radius: 2
+        }).addTo(map).bindPopup(latLong[i][0]);
+}
 
 <?php 
 }
 if ( $IID6 == "23106" ) {
 include('23106.clf.txt'); ?>
-        latLong.forEach(function(coord) {
-                var circle = L.circle(coord, {
-                color: '<?php echo $_23106;?>',
-                fillColor: '<?php echo $_23106;?>',
-                fillOpacity: 25,
-                radius: 25
-                }).addTo(map);
-        });
+for (var i = 0; i < latLong.length; i++) {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        color: '<?php echo $_23106;?>',
+        fillColor: '<?php echo $_23106fill;?>',
+        fillOpacity: 5,
+        radius: 2
+        }).addTo(map).bindPopup(latLong[i][0]);
+}
+
 <?php
 }
 ?>
+var latLong = [{
+"lat": <?php echo $lat;?>,
+"lng": <?php echo $lon;?>
+}];
+        latLong.forEach(function(coord) {
+                var circle = L.circle(coord, {
+                color: 'black',
+                fillColor: 'brown',
+		label: 'Test',
+                fillOpacity: 100,
+                radius: 5
+                }).addTo(map).bindPopup("You are here.");
+        });
+
 </script>
 </body>
 </html>
-
