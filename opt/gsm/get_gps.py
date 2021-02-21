@@ -60,10 +60,10 @@ while True:
     else:
      mode = 0
 
-    print("Lat: "+str(round(lat,6))+"; Lon: "+str(round(lon,6))+"; Alt: "+str(round(alt,0))+"; Time: "+report.time+"; Speed: "+str(round(speed))+"; Track: "+str(round(track))+"; Climb: "+str(round(climb,0))+"; Mode: "+str(round(mode,0))+"; Sat: "+str(num_sats)+"\n\n\n")
+    print("Lat: "+str(round(lat,4))+"; Lon: "+str(round(lon,4))+"; Alt: "+str(round(alt,0))+"; Time: "+report.time+"; Speed: "+str(round(speed))+"; Track: "+str(round(track))+"; Climb: "+str(round(climb,0))+"; Mode: "+str(round(mode,0))+"; Sat: "+str(num_sats)+"\n\n\n")
 
     f= open("/opt/gsm/gps.gpx","w+") #yyyymmdd
-    f.write("lat="+str(round(lat,4))+"\nlon="+str(round(lon,4))+"\nalt="+str(round(alt,0))+"\ntime="+report.time+"\nspeed="+str(round(speed))+"\nsats="+str(num_sats))
+    f.write("lat="+str(round(lat,6))+"\nlon="+str(round(lon,6))+"\nalt="+str(round(alt,0))+"\ntime="+report.time+"\nspeed="+str(round(speed))+"\nsats="+str(num_sats))
     f.close()
 #   break
 

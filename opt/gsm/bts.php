@@ -27,12 +27,11 @@
 
 <?php
 
-$IP=$_SERVER['REMOTE_ADDR'];
 $filename_bts="bts.log";
 $filename_gps="gps.gpx";
 $file = new SplFileObject($filename_bts);
 echo '<table align="center" border="1">';
-echo '<tr><td align="center"> <font size="2" face="Verdana" color="white"><b>Current : </b></font></td><td align="center"> <font size="2" face="Verdana" color="white"><b>'. Date("d.m.Y H:i:s T").'</b> ('.$IP.')</font></td></tr>';
+echo '<tr><td align="center"> <font size="2" face="Verdana" color="white"><b>Current : </b></font></td><td align="center"> <font size="2" face="Verdana" color="white"><b>'. Date("d.m.Y H:i:s T").'</b></font></td></tr>';
 echo '<tr><td align="center"> <font size="1" face="Verdana" color="white"><b>Modified BTS: </b></font></td><td align="center"> <font size="1" face="Verdana"  color="white"><b>'. Date("d.m.Y H:i:s T", filemtime($filename_bts)).'</b></font></td></tr>';
 echo '<tr><td align="center"> <font size="1" face="Verdana" color="white"><b>Modified GPS: </b></font></td><td align="center"> <font size="1" face="Verdana" color="white"><b>'. Date("d.m.Y H:i:s T", filemtime($filename_gps)).'</b></font></td></tr>';
 echo '<tr><td colspan="2" align="left"> <font size="2" face="Verdana" color="white">';

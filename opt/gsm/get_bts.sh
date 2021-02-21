@@ -80,19 +80,27 @@ for conf in `ls ${modem}/ | grep ".conf$"`; do
 
 
 # clf file
- if [ -f "${DIR}${NC}${ext}" ]; then	# If file exist
+ if [ -f "${DIR}${NC}${ext}" ]; then	# If clf file exist
   if [ `cat ${DIR}${NC}${ext} | grep ${CELLID} | wc -l` -ne "0" ]; then # If cellid exist
 
    if [ `cat ${DIR}${NC}${ext} | grep ${CELLID} | grep "+0.000000" | wc -l` -ne "0" ]; then # If cellid has not gps in file, replace it
     sed -i "/${NC};${CELLID};/d" ${DIR}${NC}${ext}	# Delete line
     echo "${NC};${CELLID};${LAC};00000;${LAT};${LON};${RFLEVEL};${DESC};0" >> ${DIR}${NC}${ext} # Insert new line
+    mv ${DIR}${NC}${ext} ${DIR}${NC}${ext}.tmp
+    sort ${DIR}${NC}${ext}.tmp > ${DIR}${NC}${ext}
+    rm -f ${DIR}${NC}${ext}.tmp
    fi
 
-   if [ ${NC} != "23106" ]; then
+   if [ ${NC} != "23106" ]; then	# If operator it not O2
     LACE=`cat ${DIR}${NC}${ext} | grep ${CELLID} | grep -v ${LAC} | cut -d ";" -f3`
-    if [ ${LACE} != ${LAC} ]; then
+    if [ ${LACE} != ${LAC} ]; then	# If LAC is different like in file
+     echo "Ine LAC pre CellID ${CELLID}. Povodne {$LACE}, nove {$LAC}. ${DESC}"
      echo "Ine LAC pre CellID ${CELLID}. Povodne {$LACE}, nove {$LAC}. ${DESC}" >> LAC_change.log
      sed -i "/${NC};${CELLID};${LACE};/d" ${DIR}${NC}${ext}      # Delete line
+     echo "${NC};${CELLID};${LAC};00000;${LAT};${LON};${RFLEVEL};${DESC};0" >> ${DIR}${NC}${ext} # Insert new line
+     mv ${DIR}${NC}${ext} ${DIR}${NC}${ext}.tmp
+     sort ${DIR}${NC}${ext}.tmp > ${DIR}${NC}${ext}
+     rm -f ${DIR}${NC}${ext}.tmp
     fi
    fi
 
