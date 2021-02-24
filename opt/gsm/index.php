@@ -69,7 +69,7 @@ $number_23106 = (count(file($file_23106)) - 3);
 ?>
 <table align="center" border="0">
  <tr>
-  <td align="center"> 
+  <td align="center">
    <a href="?ID1=1"><font size="2" face="Verdana" color="<?php echo $_23101;?>">231 01 - Orange (<?php echo $number_23101;?>) <?php echo Date("d.m.Y H:i:s", filemtime($file_23101));?></font></a>
   </td>
   <td align="center">
@@ -104,17 +104,39 @@ document.getElementById("map").width = window.innerWidth-"40";
 document.getElementById("maph").height = window.innerHeight-"260"; //  Vacsie cislo, mensia mapa
 </script>
 <?php
-$filename='gps.gpx';
+$filename='tmp_fs/gps.gpx';
 
 $line1 = file($filename)[0];
 list($a, $lat) = explode('=', $line1);
 
 $line2 = file($filename)[1];
 list($a, $lon) = explode('=', $line2);
-?>
 
+if ( $lat == 0.0 && $lon == 0.0 ){
+ $lat="48.832182";
+ $lon="19.720459";
+ $ZOOM="8";
+} else {
+ $ZOOM="14";
+?>
+var latLong = [{
+"lat": <?php echo $lat;?>,
+"lng": <?php echo $lon;?>
+}];
+        latLong.forEach(function(coord) {
+                var circle = L.circle(coord, {
+                color: 'black',
+                fillColor: 'brown',
+                label: 'Test',
+                fillOpacity: 100,
+                radius: 5
+                }).addTo(map).bindPopup("You are here.");
+        });
+<?php
+}
+?>
     <script>
-        map = L.map('map').setView([<?php echo $lat.",".$lon;?>], 15);
+        map = L.map('map').setView([<?php echo $lat.",".$lon;?>], <?php echo $ZOOM;?>);
         L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //        'http://maps.ztk-comp.sk/{z}/{x}/{y}.png', {
@@ -132,16 +154,16 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 
 
-<?php 
+<?php
 if ( $IID1 == "23101" ) {
 include('23101.clf.txt'); ?>
 for (var i = 0; i < latLong.length; i++) {
-	marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
-	color: '<?php echo $_23101;?>',
-	fillColor: '<?php echo $_23101fill;?>',
-	fillOpacity: 5,
-	radius: 2
-	}).addTo(map).bindPopup(latLong[i][0]);
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 20, {
+        color: '<?php echo $_23101;?>',
+        fillColor: '<?php echo $_23101fill;?>',
+        fillOpacity: 5,
+        radius: 2
+        }).addTo(map).bindPopup(latLong[i][0]);
 }
 
 <?php
@@ -149,20 +171,20 @@ for (var i = 0; i < latLong.length; i++) {
 if ( $IID2 == "23102" ) {
 include('23102.clf.txt'); ?>
 for (var i = 0; i < latLong.length; i++) {
-        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 20, {
         color: '<?php echo $_23102;?>',
         fillColor: '<?php echo $_23102fill;?>',
-        fillOpacity: 5,
+        fillOpacity: 50,
         radius: 2
         }).addTo(map).bindPopup(latLong[i][0]);
 }
 
-<?php 
+<?php
 }
 if ( $IID3 == "23103" ) {
 include('23103.clf.txt'); ?>
 for (var i = 0; i < latLong.length; i++) {
-        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 20, {
         color: '<?php echo $_23103;?>',
         fillColor: '<?php echo $_23103fill;?>',
         fillOpacity: 5,
@@ -170,12 +192,12 @@ for (var i = 0; i < latLong.length; i++) {
         }).addTo(map).bindPopup(latLong[i][0]);
 }
 
-<?php 
+<?php
 }
 if ( $IID6 == "23106" ) {
 include('23106.clf.txt'); ?>
 for (var i = 0; i < latLong.length; i++) {
-        marker = new L.circle([latLong[i][1],latLong[i][2]], 25, {
+        marker = new L.circle([latLong[i][1],latLong[i][2]], 20, {
         color: '<?php echo $_23106;?>',
         fillColor: '<?php echo $_23106fill;?>',
         fillOpacity: 5,
@@ -186,20 +208,6 @@ for (var i = 0; i < latLong.length; i++) {
 <?php
 }
 ?>
-var latLong = [{
-"lat": <?php echo $lat;?>,
-"lng": <?php echo $lon;?>
-}];
-        latLong.forEach(function(coord) {
-                var circle = L.circle(coord, {
-                color: 'black',
-                fillColor: 'brown',
-		label: 'Test',
-                fillOpacity: 100,
-                radius: 5
-                }).addTo(map).bindPopup("You are here.");
-        });
-
 </script>
 </body>
 </html>
