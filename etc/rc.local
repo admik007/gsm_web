@@ -1,0 +1,3 @@
+/opt/gsm/gps_activate.sh &
+screen -S get_gps -dm python /opt/gsm/get_gps.py
+screen -S get_bts -dm /opt/gsm/02_start.sh
