@@ -7,7 +7,7 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <meta http-equiv="Cache-control" content="no-cache">
  <meta http-equiv="Content-Language" content="sk">
- <meta http-equiv="refresh" content="5"> 
+ <meta http-equiv="refresh" content="5">
  <meta name="google-site-verification" content="GHY_X_yeijpdBowWr_AKSMWAT8WQ-ILU-Z441AsYG9A">
  <meta name="GOOGLEBOT" CONTENT="noodp">
  <meta name="pagerank" content="10">
@@ -27,8 +27,8 @@
 
 <?php
 
-$filename_bts="bts.log";
-$filename_gps="gps.gpx";
+$filename_bts="tmp_fs/bts.log";
+$filename_gps="tmp_fs/gps.gpx";
 $file = new SplFileObject($filename_bts);
 echo '<table align="center" border="1">';
 echo '<tr><td align="center"> <font size="2" face="Verdana" color="white"><b>Current : </b></font></td><td align="center"> <font size="2" face="Verdana" color="white"><b>'. Date("d.m.Y H:i:s T").'</b></font></td></tr>';
@@ -49,4 +49,3 @@ echo '</table>';
 
 </body>
 </html>
-
