@@ -7,7 +7,7 @@ import gps
 session = gps.gps("localhost", "9999")
 session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
 print ("Script started")
-f= open("/opt/gsm/gps.gpx","w+") #yyyymmdd
+f= open("/opt/gsm/tmp_fs/gps.gpx","w+") #yyyymmdd
 f.write("lat=0.0000\nlon=0.0000\nalt=0\n")
 f.close()
 
@@ -62,7 +62,7 @@ while True:
 
     print("Lat: "+str(round(lat,4))+"; Lon: "+str(round(lon,4))+"; Alt: "+str(round(alt,0))+"; Time: "+report.time+"; Speed: "+str(round(speed))+"; Track: "+str(round(track))+"; Climb: "+str(round(climb,0))+"; Mode: "+str(round(mode,0))+"; Sat: "+str(num_sats)+"\n\n\n")
 
-    f= open("/opt/gsm/gps.gpx","w+") #yyyymmdd
+    f= open("/opt/gsm/tmp_fs/gps.gpx","w+") #yyyymmdd
     f.write("lat="+str(round(lat,6))+"\nlon="+str(round(lon,6))+"\nalt="+str(round(alt,0))+"\ntime="+report.time+"\nspeed="+str(round(speed))+"\nsats="+str(num_sats))
     f.close()
 #   break
@@ -74,4 +74,3 @@ while True:
  except StopIteration:
   session = None
   print("GPSD has terminated")
-
