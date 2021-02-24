@@ -1,2 +1,108 @@
 Huskova 47|Kosice;48.7173669N, 21.2106297E
 Wuppertalska 41|Kosice;48.7172456N, 21.2183925E
+V Poli|Skaros;48.5822422N, 21.3431011E
+V poli|Cana;48.611037, 21.300902
+Karpatska 3|Kosice;48.720733, 21.245965
+Hlavna 29|Kosice;48.71926, 21.259291
+Hotel Bankov|Kosice;48.747552, 21.208259
+Hronska 9|Kosice;48.71776, 21.231927
+Kavecany/Cermel|Kosice;48.754152, 21.232238
+Strazna 14|Kosice;48.769456, 21.208227
+Kovacska 28|Kosice;48.722548, 21.258908
+Moldavska 8|Kosice;48.706773, 21.247816
+Nesporova 22|Kosice;48.712946, 21.233649
+Palkovicova 5|Kosice;48.733429, 21.252805
+Rozvojova 2|Kosice;48.69373, 21.249715
+Ruzova 45|Kosice;48.71352, 21.243101
+|Valaliky;48.64365, 21.304904
+Vodojem|Peres;48.692943, 21.218805
+Na Polanku|Ruzin;48.835656, 21.042359
+Belanska 538|Liptovsky Hradok;49.0394483N, 19.7219378E
+Tolhajec|Kosicka Bela;48.807768, 21.104951
+V poli|Nizna Mysla;48.640679, 21.370983
+Obec|Sokolany;48.616626, 21.236014
+Orion|Sebastovce;48.651617, 21.270905
+Meteorova 1|Kosice;48.675349, 21.302555
+Za obcou|Baska;48.707743, 21.176115
+Trieda SNP 1|Kosice;48.722396, 21.236186
+Povazska 14|Kosice;48.719285, 21.238552
+Trieda SNP 104|Kosice;48.705265, 21.241014
+Miskovecka 5|Kosice;48.701788, 21.254951
+Polska 2|Kosice;48.698878, 21.260605
+Katastralny urad|Kosice;48.682921, 21.26878
+Bukovecka 3|Kosice;48.696923, 21.282191
+Amurska 7|Kosice;48.691619, 21.284122
+Napajadla 5|Kosice;48.68115, 21.285496
+Zdiarska 1|Kosice;48.682425, 21.292952
+V poli|Hylov;48.716132, 21.151192
+Nad Myslavou|Kosice;48.702149, 21.213098
+Kezmarska 2|Kosice;48.708323, 21.230114
+Kukucinova 25|Kosice;48.714228, 21.251485
+Letisko KE|Kosice;48.671579, 21.233826
+Juzna Trieda 11|Kosice;48.714702, 21.260272
+Tyrsovo Nabrezie - Yasmin|Kosice;48.72953, 21.25729
+CSA 14|Kosice;48.726084, 21.246722
+Bozeny Nemcovej 30|Kosice;48.730369, 21.243439
+Terchovska 8|Kosice;48.728667, 21.232206
+Havlickova 58|Kosice;48.737579, 21.245198
+Letecka Akademia|Kosice;48.735071, 21.273319
+Kalinovska 3|Kosice;48.742108, 21.278152
+Juhoslovanska 3|Kosice;48.754774, 21.271623
+ZST Tahanovce|Kosice;48.755538, 21.251228
+Hradbovou 30|Kosice;48.748507, 21.24655
+Priemyselna 2|Kosice;48.728398, 21.275561
+Bastovackeho 2|Kosice;48.737424, 21.281033
+Krosnianska 3|Kosice;48.734278, 21.287717
+Furcianska 60|Kosice;48.739462, 21.29108
+Zeleny Dvor|Kosice;48.771171, 21.295479
+Maurerova 7|Kosice;48.727952, 21.287094
+Kriva 18|Kosice;48.716925, 21.267686
+Puskinova 2|Kosice;48.721299, 21.262075
+Hlavna 107|Kosice;48.725241, 21.256067
+Hlavna 68|Kosice;48.7227, 21.256431
+Vojenska Letecka Nemocnica|Kosice;48.717901, 21.256045
+Postova 18|Kosice;48.721929, 21.25037
+Mudronova 36|Kosice;48.708054, 21.259232
+Jarmocna 13|Kosice;48.708419, 21.26693
+Spisske Namestie 3|Kosice;48.688942, 21.283726
+Zeleziarska 21|Saca;48.6328350N, 21.1713708E
+Park Hotel|Porac;48.8796631N, 20.7421942E
+Blok Vysoka|Tatranska Strba;49.08863, 20.069607
+Chata M.R.Stefanika|Nizke Tatry;48.9266375N, 19.6497131E
+Hotel Bystra|Lipt.Jan;49.0281664N, 19.6723600E
+Kopec|Kralova Lehota;49.0313617N, 19.7896922E
+V Poli|Vazec;49.0612839N, 19.9552861E
+Hotel Gerlach|Poprad;49.0573567N, 20.2951508E
+Stefanikova 29|Poprad;49.0571022N, 20.3057536E
+Nemocnica|Poprad;49.05168, 20.304387
+V Poli|Vlkova;49.059878, 20.439763
+Glorila Palace|Stary Smokovec;49.1380675N, 20.2192008E
+Banik|Strbske Pleso;49.1153392N, 20.0655181E
+Hotel|Podbanske;50.8511086N, 14.4768075E
+Hvezdaren|Skalnate Pleso;49.189081, 20.234027
+Pred Levocou|Levoca;49.0120367N, 20.5588578E
+V Poli|Jablonov;49.012457, 20.718498
+Cintorin|Druzstevna Nad Hornadom;48.794638, 21.259875
+Svah - Jahodna|Kosice;48.765871, 21.124113
+Havanska 15|Kosice;48.759449, 21.270111
+Medzi Mostami 2|Kosice;48.7403931N, 21.2606408E
+Jedlikova 9|Kosice;48.696711, 21.234083
+V poli|Krasna / V.Hutka;48.674222, 21.33306
+Golianova / Ukrajinska|Kosice;48.6717208N, 21.3030233E
+Stanica|Cecejovce;48.587452, 21.070619
+Skola|Velka Ida;48.592945, 21.16838
+V poli|Kechnec;48.55616, 21.253406
+Budulov|Moldava Nad Bodvou;48.59225, 20.996418
+Nad Fabryho|Moldava nad Bodvou;48.6136394N, 20.9861650E
+|Komarovce;48.5664589N, 21.1567764E
+Nemocnica|Saca;48.642806, 21.172028
+U.S.Steel|Saca;48.626697, 21.191511
+V poli|Polov;48.669312, 21.195202
+V Poli|Panovce;48.6574339N, 21.0703692E
+V poli|Jasov;48.6821786N, 20.9963317E
+Grunt|Myslava;48.7167547N, 21.1943944E
+Skola|Mala Ida;48.677428, 21.167339
+V Poli|Bidovce;48.7408550N, 21.4428833E
+V Poli|Dargovsky Priesmyk;48.736543, 21.535671
+V Poli|Herlany;48.7942342N, 21.4885967E
+Chatova Oblast|Zdoba;48.7183228N, 21.3154139E
