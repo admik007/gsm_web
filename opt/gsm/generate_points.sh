@@ -1,11 +1,16 @@
 #!/bin/bash
 TOTAL="0"
 DIR="/opt/gsm/"
-
+logger "Generate start "
 ISRUNNING=`ps -ef | grep generate | grep -v grep | wc -l`
-if [ ${ISRUNNING} -lt "3" ]; then
+ISRUNNINGP=`ps -ef | grep generate | grep -v grep `
+logger "Runnung: ${ISRUNNING}"
+logger "${ISRUNNINGP}"
+
+if [ ${ISRUNNING} -lt "4" ]; then
  cd ${DIR}
- for BTS in `ls ${DIR} | grep clf$`; do
+ for BTS in `ls ${DIR} | grep ".clf$"`; do
+ logger "Work with ${BTS}"
  OP="0"
   echo "var latLong = [" > ${BTS}.txt.tmp
   chown www-data. ${BTS} ${BTS}.txt.tmp
@@ -23,5 +28,6 @@ if [ ${ISRUNNING} -lt "3" ]; then
   echo "${BTS} = ${OP}";
   mv ${BTS}.txt.tmp ${DIR}${BTS}.txt
  done
+ logger "Total: ${TOTAL}"
  echo "Total: ${TOTAL}";
 fi

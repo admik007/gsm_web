@@ -11,18 +11,18 @@ for ID in `ls ${DIR} | grep clf$ | cut -d "." -f1`; do
  cp ${FILE} bak/${FILE}.${NOW}
  echo "Work with ${ID}"
  OP='0'
- for ADDRESS in `cat ${ADDRESS_LIST}  | sed 's/ /_/g' | sort | uniq | cut -d ';' -f1`; do
+ for ADDRESS in `cat ${ADDRESS_LIST}  | sed 's/ /_/g' | sort | uniq | cut -d ';' -f1`; do 
   ADDR=`echo ${ADDRESS} | sed 's/_/ /g'`
   GPS=`cat ${ADDRESS_LIST} | grep "${ADDR}" | sort | uniq | tr -d '+' | cut -d ';' -f2`
-  for ROW in `cat ${FILE} | grep -i "${ADDR}" | sed 's/ /_/g'`; do
+  for ROW in `cat ${FILE} | grep -i "${ADDR}" | sed 's/ /_/g'`; do 
    echo -n "."
    let OP++;
-   DGPS=`echo "+"${GPS} | tr -d 'N' | tr -d 'E' | tr -d ' ' | sed 's/,/;+/g'`   # GPS from file clf, as source
+   DGPS=`echo "+"${GPS} | tr -d 'N' | tr -d 'E' | tr -d ' ' | sed 's/,/;+/g'`	# GPS from file clf, as source
    ROW=`echo ${ROW} | cut -d ';' -f1,2,3,4,5,6,7`
    DDATA1=`cat ${FILE} | grep -i "${ROW}" | cut -d ';' -f1,2,3,4`
    DDATA2=`cat ${FILE} | grep -i "${ROW}" | cut -d ';' -f7,8,9`
    DEST=`cat ${FILE} | grep -i "${ROW}" | cut -d ';' -f7`
-   if [ "${ROW}" != "${DDATA1};${DGPS};${DEST}" ]; then
+   if [ "${ROW}" != "${DDATA1};${DGPS};${DEST}" ]; then 
     echo ""
     echo "Change GPS for ${DDATA2}"
 #    echo "Source: ${ROW}"

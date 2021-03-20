@@ -1,0 +1,8 @@
+[global]
+model = AT
+
+#port = 6C:9B:02:1E:CA:83
+#connection = bluetooth
+
+port = /dev/ttyACM4
+connection = serial

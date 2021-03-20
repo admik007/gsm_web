@@ -1,5 +1,4 @@
 Bardejovske kupele;49.3343272N, 21.2792083E
-Belanska 537|Liptovsky Hradok;49.0402667N, 19.7226964E
 Blok 2|Tatranska Strba;49.0889411N, 20.0703700E
 Chata M.R.Stefanika|Chopok;48.9266375N, 19.6497131E
 Cintorin|Druzstevna Nad Hornadom;48.7947814N, 21.2612756E
@@ -13,7 +12,7 @@ Festivalove Namestie 40|Kosice;48.7283317N, 21.2431081E
 Francisciho 27|Poprad;49.0540192N, 20.3028283E
 Hlavna 107|Kosice;48.7251808N, 21.2559492E
 Hlavna 68|Kosice;48.7227292N, 21.2563328E
-Hemerkova 34|Kosice;48.7171858N, 21.2091858E
+Hemerkova 34|Kosice;48.716709, 21.209536
 Jedlikova 5|Kosice;48.6983011N, 21.2350456E
 Jegorovovo Namestie 1|Kosice;48.7379178N, 21.2804586E
 Juzna Trieda 68|Kosice;48.6975444N, 21.2643600E
@@ -58,3 +57,8 @@ Vojenska Letecka Nemocnica|Kosice;48.7174553N, 21.2557594E
 Wurmova 19|Kosice;48.7080153N, 21.2135325E
 Zeleny Dvor|Kosice;48.7712386N, 21.2952086E
 Zoo|Kosice;48.7879961N, 21.1850861E
+V poli|Velka Ida;48.58098, 21.174474
+Letisko|Panovce;48.6313878N, 21.0876472E
+V Poli|Bidovce;8.7328294N, 21.4491064E
+Maurerova 7|Kosice;48.727994, 21.287089
+Vojenska Letecka Akademia|Kosice;48.73355, 21.272364
